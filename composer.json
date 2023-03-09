@@ -1,0 +1,19 @@
+{
+  "name": "nodeless-io/nodelessio-paywall",
+  "description": "Nodeless Paywall for WordPress - Lightning powered paywalls for WordPress.",
+  "version": "1.0.1",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "require": {
+    "firebase/php-jwt": "dev-main",
+    "jorijn/bitcoin-bolt11": "dev-master",
+    "tkijewski/php-lnurl": "dev-master",
+    "nodeless-io/nodeless-php": "dev-paywall"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/tkijewski/php-lnurl.git"
+    }
+  ]
+}
