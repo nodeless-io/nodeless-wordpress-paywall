@@ -55,14 +55,16 @@ class NLPW_ConnectionPage extends NLPW_SettingsPage
         /**
          * Nodeless.io
          */
+        // Doing checkbox here for now (no select type is supported by their custom settings form builder).
         $fields[] = array(
-            'tab'     => 'nodeless',
-            'field'   => array(
-                'type'        => 'url',
-                'name'        => 'nodeless_host',
-                'label'       => __('Host', 'nodeless-paywall'),
-                'description' => __('Nodeless.io host, will be replaced by Live/Testnet dropdown', 'nodeless-paywall'),
-            ),
+          'tab'     => 'nodeless',
+          'field'   => array(
+            'type'  => 'checkbox',
+            'name'  => 'nodeless_mode',
+            'value' => 'testnet',
+            'label' => __('Testnet mode', 'nodeless-paywall'),
+            'description' => __('If set the paywall will be connected to testnet.nodeless.io (testnet) instead of the production site.', 'nodeless-paywall'),
+          ),
         );
 
         $fields[] = array(

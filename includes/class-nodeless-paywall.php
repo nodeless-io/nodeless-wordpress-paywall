@@ -288,10 +288,7 @@ class Nodeless_Paywall
 
         if (!$this->lightningClient) {
             try {
-                if (!empty($this->connection_options['btcpay_host'])) {
-                    $this->lightningClientType = 'btcpay';
-                    $this->lightningClient = new Nodeless_Paywall_BTCPay_Client($this->connection_options);
-                } elseif (!empty($this->connection_options['nodeless_host'])) {
+                if (!empty($this->connection_options['nodeless_apikey'])) {
                     $this->lightningClientType = 'nodeless';
                     $this->lightningClient = new Nodeless_Paywall_Nodeless_Client($this->connection_options);
                 }

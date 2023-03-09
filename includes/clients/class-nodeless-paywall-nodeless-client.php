@@ -12,11 +12,25 @@ defined('WPINC') || die;
  */
 class Nodeless_Paywall_Nodeless_Client extends Abstract_Nodeless_Paywall_Client
 {
+    const API_URL = [
+        'testnet' => 'https://testnet.nodeless.io',
+        'production' => 'https://nodeless.io'
+    ];
+
+    public string $mode;
+    public string $apiUrl;
+    public string $apiKey;
+
     public function __construct($options)
     {
         parent::__construct($options);
+
+        $this->mode = ($this->options['nodeless_mode'] === 'testnet') ? 'testnet' : 'production';
+        $this->apiUrl = defined('NODELESS_HOST') ? NODELESS_HOST : self::API_URL[$this->mode];
+        $this->apiKey = $this->options['nodeless_apikey'];
+
         try {
-            $this->client = new NodelessIO\Client\PaywallRequestClient($this->options['nodeless_host'], $this->options['nodeless_apikey']);
+            $this->client = new NodelessIO\Client\PaywallRequestClient($this->apiUrl, $this->apiKey);
         } catch (\Exception $e) {
             echo "Failed to connect to Nodeless.io: " . $e->getMessage();
         }
@@ -92,7 +106,7 @@ class Nodeless_Paywall_Nodeless_Client extends Abstract_Nodeless_Paywall_Client
     public function isConnectionValid()
     {
         // Todo: replace with ping/info endpoint as soon as available.
-        $client = new NodelessIO\Client\StoreClient($this->options['nodeless_host'], $this->options['nodeless_apikey']);
+        $client = new NodelessIO\Client\StoreClient($this->apiUrl, $this->apiKey);
         $stores = $client->allStores();
         return !empty($stores);
     }
@@ -138,7 +152,7 @@ class Nodeless_Paywall_Nodeless_Client extends Abstract_Nodeless_Paywall_Client
      */
     public function client()
     {
-        return $this->client->client();
+        return $this->client;
     }
 
     public function getPaywallIdFromPost($postId): string
@@ -148,7 +162,7 @@ class Nodeless_Paywall_Nodeless_Client extends Abstract_Nodeless_Paywall_Client
 
     public function getPaywallClient(): NodelessIO\Client\PaywallClient
     {
-        return new NodelessIO\Client\PaywallClient($this->options['nodeless_host'], $this->options['nodeless_apikey']);
+        return new NodelessIO\Client\PaywallClient($this->apiKey, $this->apiKey);
     }
 
     public function getPaywallById($paywall_id): ?\NodelessIO\Response\PaywallResponse
