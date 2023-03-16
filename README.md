@@ -3,9 +3,10 @@
 
 
 Nodeless Paywall is a plugin for WordPress to accept instant Bitcoin Lightning payments.
-It allows you to monetize any digital content with instant microtransactions and receive payments from your visitors directly to your preferred wallet - no need for expensive service providers.
+It allows you to monetize any digital content with instant microtransactions and receive payments from your visitors directly to your preferred LN address or cold storage.
 
-The plugin is the easiest and most flexible plugin to sell your digital content and to receive donations or Value 4 Value payments.
+The plugin is the easiest and most flexible plugin to sell your digital content.
+
 Using the Bitcoin Lightning Network you can create the best visitor experience with seamless one-click payments.
 
 
@@ -19,40 +20,39 @@ Sell any digital content (pay-per-post, pay-per-view, pay-per-download, etc.) wi
 * Crowdfund option: make the content freely available after a certain amount is received
 * Time-in option: keep the article freely available for a certain time and then enable the paywall after that
 * Time-out option: make the article freely available after a certain time
-* Configure the price in Satoshis, EUR, USD, or GBP (with real-time exchange rate)
+* Configure the price in Sats (Satoshis), EUR, USD, or GBP (with real-time exchange rate)
 * Configure the paywall with a shortcode (`[nlpaywall]`)
 * Or configure the paywall with a Gutenberg Block
 * Integrate with other tools and plugins like membership tools to control if the paywall should be enabled (see Paywall Hook section)
 
 
 ### REST-API for full advanced custom usage
-For more advanced, custom Lightning integrations you can use the REST API to create and verify invoices. The API also provides a [LNURL-pay](https://github.com/fiatjaf/lnurl-rfc/blob/luds/06.md) endpoint. See the REST-API section for details.
+For more advanced, custom Lightning integrations you can use the REST API to create and verify invoices. See the REST-API section for details.
 
 
 ## Requirements
 
 * WordPress 5.6 or higher
-* PHP 7.4 or higher (with [internationalization functions](https://www.php.net/manual/en/book.intl.php)
-
-## Demo
+* PHP 8.0 or higher (with [internationalization functions](https://www.php.net/manual/en/book.intl.php)
 
 
 ## Installation
 
-Install from the WordPress [Plugin directory](https://wordpress.org/plugins/) or:
+Install from the WordPress [Plugin directory](https://wordpress.org/plugins/nodeless-paywall) or:
 
-Download the zip from the [latest release](https://github.com/nodeless-io/wordpress-paywall/releases/latest) and install/activate it through the WordPress Plugin admin panel.
+Download the zip from the [latest release](https://github.com/nodeless-io/nodeless-paywall/releases/latest) and install/activate it through the WordPress Plugin admin panel.
 
-To build the plugin yourself: clone the repository and install the dependency using [Composer](https://getcomposer.org/)
+To build the plugin yourself: clone the repository and install the dependencies using [Composer](https://getcomposer.org/).
 
 ```bash
-git clone https://github.com/nodeless-io/wordpress-paywall.git
-cd wordpress-paywall
+cd wp-content/plugins
+git clone https://github.com/nodeless-io/nodeless-paywall.git
+cd nodeless-paywall
 composer install # (maybe you need to add `--ignore-platform-reqs` if it asks you to update PHP)
 ```
-To build a .zip file of the WordPress plugin run:
+To build a .zip file of the WordPress plugin run (need to have wp-cli with dist-archive command installed):
 ```bash
-./build.sh # this builds a `nodeless-paywall.zip`
+wp dist-archive .
 ```
 
 Then upload and activate the plugin through the WordPress Plugin admin panel.
@@ -166,27 +166,6 @@ The plugin also provides a set of REST API Endpoints for handling payments and d
     preimage: "xxx"
 }
 ```
-
-#### LNURL-pay
-
-- URL: `/nlpw/v1/lnurlp`
-- Method: `GET`
-- Auth Required: No
-
-```
-{
-    "status":"OK",
-    "callback":"http:\/\/wp.play.getalby.com\/wp-json\/nlpw\/v1\/lnurlp\/callback",
-    "minSendable":10000,
-    "maxSendable":1000000000,
-    "tag":"payRequest",
-    "metadata":"[[\"text\/identifier\", \"http:\/\/wp.play.getalby.com\"][\"text\/plain\", \"Alby\"]]"
-}
-```
-
-- URL: `/nlpw/v1/lnurlp/callback`
-- Method: `GET`
-- Auth Required: No
 
 #### Initiate a general payment to generate an invoice
 
