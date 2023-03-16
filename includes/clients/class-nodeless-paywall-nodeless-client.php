@@ -30,7 +30,7 @@ class Nodeless_Paywall_Nodeless_Client extends Abstract_Nodeless_Paywall_Client
         $this->apiKey = $this->options['nodeless_apikey'];
 
         try {
-            $this->client = new NodelessIO\Client\PaywallRequestClient($this->apiUrl, $this->apiKey);
+            $this->client = new \NodelessIO\Client\PaywallRequestClient($this->apiUrl, $this->apiKey);
         } catch (\Exception $e) {
             echo "Failed to connect to Nodeless.io: " . $e->getMessage();
         }
@@ -106,7 +106,7 @@ class Nodeless_Paywall_Nodeless_Client extends Abstract_Nodeless_Paywall_Client
     public function isConnectionValid()
     {
         // Todo: replace with ping/info endpoint as soon as available.
-        $client = new NodelessIO\Client\StoreClient($this->apiUrl, $this->apiKey);
+        $client = new \NodelessIO\Client\StoreClient($this->apiUrl, $this->apiKey);
         $stores = $client->allStores();
         return !empty($stores);
     }
@@ -160,9 +160,9 @@ class Nodeless_Paywall_Nodeless_Client extends Abstract_Nodeless_Paywall_Client
         return get_post_meta($postId, NODELESSIO_PW_POST_META_PAYWALL_ID, true);
     }
 
-    public function getPaywallClient(): NodelessIO\Client\PaywallClient
+    public function getPaywallClient(): \NodelessIO\Client\PaywallClient
     {
-        return new NodelessIO\Client\PaywallClient($this->apiKey, $this->apiKey);
+        return new \NodelessIO\Client\PaywallClient($this->apiUrl, $this->apiKey);
     }
 
     public function getPaywallById($paywall_id): ?\NodelessIO\Response\PaywallResponse

@@ -598,7 +598,7 @@ class Nodeless_Paywall
         if (!$nlClient instanceof Nodeless_Paywall_Nodeless_Client) {
             return;
             // todo: log
-            // throw new \Exception("Can't process, only works with Nodeless_Paywall_Nodeless_Client");
+            throw new \Exception("Can't process, only works with Nodeless_Paywall_Nodeless_Client");
         }
 
         $title = get_bloginfo('name') . ' - ' . get_the_title($post_id);
