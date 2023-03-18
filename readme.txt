@@ -58,6 +58,8 @@ For more advanced, custom Lightning integrations you can use the REST API to cre
 [Release notes on GitHub](https://github.com/nodeless-io/wordpress-paywall/releases)
 
 == Upgrade Notice ==
+= 1.0.1 =
+* Replace connection check with API status check.
 
 = 1.0.0 =
 Initial release

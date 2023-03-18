@@ -105,10 +105,9 @@ class Nodeless_Paywall_Nodeless_Client extends Abstract_Nodeless_Paywall_Client
      */
     public function isConnectionValid()
     {
-        // Todo: replace with ping/info endpoint as soon as available.
-        $client = new \NodelessIO\Client\StoreClient($this->apiUrl, $this->apiKey);
-        $stores = $client->allStores();
-        return !empty($stores);
+        $client = new \NodelessIO\Client\ServerInfoClient($this->apiUrl, $this->apiKey);
+        $status = $client->getApiStatus();
+        return !empty($status);
     }
 
     /**
