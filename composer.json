@@ -5,7 +5,7 @@
   "license": "MIT",
   "minimum-stability": "dev",
   "require": {
-    "firebase/php-jwt": "dev-master",
+    "firebase/php-jwt": "^6.4",
     "jorijn/bitcoin-bolt11": "dev-master",
     "tkijewski/php-lnurl": "dev-master",
     "nodeless-io/nodeless-php": "dev-main"
