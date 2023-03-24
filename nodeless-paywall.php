@@ -30,7 +30,7 @@ if (! defined('WPINC') ) {
  * Current plugin version.
  * Start at version 1.0.0 and use SemVer - https://semver.org
  */
-define('NODELESSIO_PW_VERSION', '1.0.0');
+define('NODELESSIO_PW_VERSION', '1.0.1');
 define('NODELESSIO_PW_PAYWALL_JWT_KEY', hash_hmac('sha256', 'nodeless-paywall', AUTH_KEY));
 define('NODELESSIO_PW_PAYWALL_JWT_ALGORITHM', 'HS256');
 define('NODELESSIO_PW_ROOT_PATH', untrailingslashit(plugin_dir_path(__FILE__)));

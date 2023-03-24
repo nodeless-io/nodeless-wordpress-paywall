@@ -3,6 +3,7 @@ vendor
 .vimrc
 bitcoin-lightning-publisher.zip
 wp-svn
+composer.lock
 
 # Numerous always-ignore extensions
 *.diff
