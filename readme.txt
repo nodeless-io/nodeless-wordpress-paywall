@@ -4,7 +4,7 @@ Tags: bitcoin, lightning, payment, donation, paywall, rss, micropayments
 Requires at least: 5.6.0
 Tested up to: 6.1.1
 Requires PHP: 8.0
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv3
 Contributors: nodeless,ndeet
 
@@ -58,6 +58,9 @@ For more advanced, custom Lightning integrations you can use the REST API to cre
 [Release notes on GitHub](https://github.com/nodeless-io/wordpress-paywall/releases)
 
 == Upgrade Notice ==
+= 1.0.3 :: 2023-03-25 =
+* Fix build action, remove unsupported build step
+
 = 1.0.2 :: 2023-03-25 =
 * Fix build action, missing gmp dependency
 
