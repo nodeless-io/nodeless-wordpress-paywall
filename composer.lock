@@ -510,12 +510,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nodeless-io/nodeless-php.git",
-                "reference": "47378bc35c163323df95c000e85a3b256af89acd"
+                "reference": "8d79c21e7b057770f45d63debf18668c5b273885"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nodeless-io/nodeless-php/zipball/47378bc35c163323df95c000e85a3b256af89acd",
-                "reference": "47378bc35c163323df95c000e85a3b256af89acd",
+                "url": "https://api.github.com/repos/nodeless-io/nodeless-php/zipball/8d79c21e7b057770f45d63debf18668c5b273885",
+                "reference": "8d79c21e7b057770f45d63debf18668c5b273885",
                 "shasum": ""
             },
             "require": {
@@ -552,7 +552,7 @@
                 "issues": "https://github.com/nodeless-io/nodeless-php/issues",
                 "source": "https://github.com/nodeless-io/nodeless-php/tree/main"
             },
-            "time": "2023-03-18T15:39:49+00:00"
+            "time": "2023-03-19T20:36:12+00:00"
         },
         {
             "name": "pleonasm/merkle-tree",
