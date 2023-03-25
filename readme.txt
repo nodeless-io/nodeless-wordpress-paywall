@@ -4,7 +4,7 @@ Tags: bitcoin, lightning, payment, donation, paywall, rss, micropayments
 Requires at least: 5.6.0
 Tested up to: 6.1.1
 Requires PHP: 8.0
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv3
 Contributors: nodeless,ndeet
 
@@ -58,10 +58,10 @@ For more advanced, custom Lightning integrations you can use the REST API to cre
 [Release notes on GitHub](https://github.com/nodeless-io/wordpress-paywall/releases)
 
 == Upgrade Notice ==
-= 1.0.1 =
+= 1.0.1 :: 2023-03-25 =
 * Replace connection check with API status check.
 
-= 1.0.0 =
+= 1.0.0 :: 2023-03-15 =
 Initial release
 
 == Additional Info ==
@@ -70,4 +70,4 @@ This plugin is free and open source. We welcome and appreciate new contributions
 Visit the [code repository](https://github.com/nodeless-io/wordpress-paywall) and help us to improve the plugin.
 
 **Credits**
-This plugin is a fork of the [Bitcoin Lightning Publisher plugin](https://github.com/getAlby/lightning-publisher-wordpress) from [Alby](https://getalby.com) but adjusted to be used with the Nodeless.io service.
+This plugin is a fork of the [Bitcoin Lightning Publisher plugin](https://wordpress.org/plugins/bitcoin-lightning-publisher/) from [Alby](https://getalby.com) but adjusted to be used with the Nodeless.io service.

@@ -14,7 +14,7 @@
  * @wordpress-plugin
  * Plugin Name:       Nodeless Paywall
  * Description:       Nodeless Paywall is a Paywall and Donation plugin for WordPress to accept instant Bitcoin Lightning payments and donations directly to your preferred wallet.
- * Version:           1.0.0
+ * Version:           1.0.1
  * License:           GPL-3.0
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain:       nodeless-paywall
