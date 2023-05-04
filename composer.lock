@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e81a78d2cdc53a92bb7fa9a9037c3f51",
+    "content-hash": "9c595410308e990d35b1edd03a3ee787",
     "packages": [
         {
             "name": "bitwasp/bech32",
@@ -506,16 +506,16 @@
         },
         {
             "name": "nodeless-io/nodeless-php",
-            "version": "dev-main",
+            "version": "0.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nodeless-io/nodeless-php.git",
-                "reference": "8d79c21e7b057770f45d63debf18668c5b273885"
+                "reference": "4a2d76eca827c366ba54a4f5d7e295374bf53e47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nodeless-io/nodeless-php/zipball/8d79c21e7b057770f45d63debf18668c5b273885",
-                "reference": "8d79c21e7b057770f45d63debf18668c5b273885",
+                "url": "https://api.github.com/repos/nodeless-io/nodeless-php/zipball/4a2d76eca827c366ba54a4f5d7e295374bf53e47",
+                "reference": "4a2d76eca827c366ba54a4f5d7e295374bf53e47",
                 "shasum": ""
             },
             "require": {
@@ -531,7 +531,6 @@
                 "vimeo/psalm": "^4.8",
                 "vlucas/phpdotenv": "^5.5"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -550,9 +549,9 @@
             "description": "Nodeless.io PHP client library.",
             "support": {
                 "issues": "https://github.com/nodeless-io/nodeless-php/issues",
-                "source": "https://github.com/nodeless-io/nodeless-php/tree/main"
+                "source": "https://github.com/nodeless-io/nodeless-php/tree/0.0.1"
             },
-            "time": "2023-03-19T20:36:12+00:00"
+            "time": "2023-05-03T22:13:17+00:00"
         },
         {
             "name": "pleonasm/merkle-tree",
@@ -722,8 +721,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "jorijn/bitcoin-bolt11": 20,
-        "tkijewski/php-lnurl": 20,
-        "nodeless-io/nodeless-php": 20
+        "tkijewski/php-lnurl": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
